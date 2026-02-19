@@ -1,0 +1,19 @@
+package datastructure;
+
+import javax.xml.transform.Source;
+import java.sql.SQLOutput;
+
+public class FlexibleArrayTest {
+   public static void main(String[] args) {
+        FlexibleArray<Integer> flexibleArray =
+                new FlexibleArray<>(3);
+        System.out.println("The current size = " + flexibleArray.size());
+        
+        for (int i = 0; i < 5; i++) {
+			flexibleArray.add(3 + i);
+		}
+        
+        System.out.println("The current size = " + flexibleArray.size());
+        flexibleArray.remove(1);
+    }
+}

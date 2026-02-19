@@ -1,0 +1,31 @@
+package datastructure.list;
+
+
+/*
+ *
+ * @author Alexander
+ * 12 feb 2026
+ */
+public class ListTest {
+
+	public static void main(String[] args) throws Exception {
+		
+		Object obj1 = new Object();
+		Object obj2 = new Object();
+		System.out.println(obj1);
+		System.out.println(obj2);
+		
+		ListImpl<Integer> list = new ListImpl<Integer>();
+		System.out.println("The first node of the list is " + list.getFirst());
+		System.out.println("The last node of the list is " + list.getLast());
+		//list.add(null);
+		list.add(new Node(30));
+		list.add(new Node(20));
+		list.add(new Node(70));
+		list.add(new Node(60));
+		list.add(new Node(10));
+		
+		list.printList();
+	}
+	
+}

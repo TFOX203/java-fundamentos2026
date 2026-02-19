@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>30</x>
+      <y>90</y>
+      <w>250</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>Package::AddressBook
+{Some Properties}
+--
+-contact: FlexibleArray&lt;Contact&gt; 
+--
+#Operation(i: int): 
+showContacts
+addContact(contact)
+removeContact(contact)
+--
+Responsibilities
+Administrador de tablas de contactos</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>290</x>
+      <y>90</y>
+      <w>210</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>Package::Contact
+{Some Properties}
+--
+-contact: FlexibleArray&lt;Contact&gt; 
+--
+#Operation(i: int): int
+Contact-string-string-string
+getPhoneNumber
+setPhoneNumber-string
+getName
+setName-string
+getSurname
+getSurname-string
+getEmail
+setEmail-string
+toString
+--
+Responsibilities
+creador de contructores 
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1110</x>
+      <y>0</y>
+      <w>210</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Stereotype&gt;&gt;
+Package::FatClass
+{Some Properties}
+--
+-id: Long
+_-ClassAttribute: Long_
+--
+#Operation(i: int): int
+/+AbstractOperation()/
+--
+Responsibilities
+-- Resp1
+*-- Resp2*</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>520</x>
+      <y>90</y>
+      <w>330</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>Package::ContactApp
+{Some Properties}
+--
+-contact: FlexibleArray&lt;Contact&gt; 
+--
+#Operation(i: int): 
+removeContact
+showContact
+addContact
+showMenu
+--
+Responsibilities
+interfaz que interactua directamente con el usuario</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>120</x>
+      <y>580</y>
+      <w>160</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>BUSQUEDA BINARIA</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>110</x>
+      <y>710</y>
+      <w>120</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>HASHMAP</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>190</x>
+      <y>610</y>
+      <w>420</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;400.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>590</x>
+      <y>600</y>
+      <w>120</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>CONTACTAPP</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>160</x>
+      <y>610</y>
+      <w>450</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;100.0;430.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>60</x>
+      <y>760</y>
+      <w>500</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Usar un HashMap mejora muchísimo el rendimiento
+porque permite acceder, añadir y eliminar contactos en tiempo
+constante, es decir, siempre igual de rápido aunque haya miles
+de registros. No necesita ordenar la lista ni recorrerla elemento 
+por elemento, ya que busca al instante usando una clave, como el nombre.
+En general, si quieres que tu aplicación sea rápida en todas las operaciones,
+el HashMap es la opción más eficiente.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>90</x>
+      <y>420</y>
+      <w>400</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>La búsqueda binaria también mejora el rendimiento
+frente a una lista normal, porque busca un contacto
+en muy pocos pasos. Sin embargo, solo funciona
+si la lista está siempre ordenada, y mantenerla
+ordenada hace que añadir o eliminar contactos sea más lento
+. Es útil solo si buscas mucho y casi no añades ni borras
+elementos, pero no es tan eficiente
+como un HashMap en la mayoría de aplicaciones.</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
