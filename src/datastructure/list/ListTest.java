@@ -15,15 +15,15 @@ public class ListTest {
 		System.out.println(obj1);
 		System.out.println(obj2);
 		
-		ListImpl<Integer> list = new ListImpl<Integer>();
+		LinkedistImpl<Integer> list = new LinkedistImpl<Integer>();
 		System.out.println("The first node of the list is " + list.getFirst());
 		System.out.println("The last node of the list is " + list.getLast());
 		//list.add(null);
-		list.add(new Node(30));
-		list.add(new Node(20));
-		list.add(new Node(70));
-		list.add(new Node(60));
-		list.add(new Node(10));
+		list.add(30);
+		list.add(20);
+		list.add(70);
+		list.add(60);
+		list.add(10);
 		
 		list.printList();
 	}

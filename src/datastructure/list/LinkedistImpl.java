@@ -1,7 +1,12 @@
 package datastructure.list;
 
 /*
- *
+ *interface oriented development: we use interfaces to 
+ *abstract different solutions
+ *In a interface,you can declare methods,but without
+ *implementations,in other words, without method body,
+ *or only with method signature (firma). As each method
+ *could have multiples different implementation
  * @author Alexander
  * 12 feb 2026
  */
@@ -10,7 +15,7 @@ package datastructure.list;
  *@author Alexander Pulpon
  *17 feb 2026
  */
-public class ListImpl<E> {
+public class LinkedistImpl<E> implements List<E>{
 
 	// The reference to the last element in the list
 	private Node<E> last;
@@ -32,12 +37,18 @@ public class ListImpl<E> {
 		return null;
 	}
 
-	public void add(Node<E> node) throws Exception {
+	public void add(E e)  {
 		//1. check the parameter if it is valid
-		if(node == null) {
-			throw new Exception("You can not pass a null node to the list");
+		if(e == null) {
+			try {
+				throw new Exception("You can not pass a null node to the list");
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			
 		}
+		Node<E> node = new Node(e);
 		//2. add the node to the tail of the list
 		//2.1 Check first if the head element is null
 		// in the case of null, it means the list is empty
@@ -80,6 +91,31 @@ public class ListImpl<E> {
 			
 			
 		}
+	}
+
+
+	@Override
+	public E remove(int index) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public E removeFromTail() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public E removeFromHead() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void add(E e, int position) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

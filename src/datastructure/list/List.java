@@ -1,6 +1,6 @@
 package datastructure.list;
 /*
- * 
+ * interface oriented development: we use interface to abstract different solutions
  * Alexander pulpon
  */
 
