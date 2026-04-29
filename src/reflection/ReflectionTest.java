@@ -16,7 +16,42 @@ public class ReflectionTest {
 		Class<?> cls3 = Class.forName("oopmodeling.addressbook.AddressBook");
 		
 		inspectClass(cls1);
+		
+		AddressBook addressBook = new AddressBook();
+		manipulateObject(addressBook);
 	}
+	
+
+	private static void manipulateObject(AddressBook addressBook) {
+		Class<?> cls = addressBook.getClass();
+		Field[] fields = cls.getDeclaredFields();
+		
+		try {
+			Field field = cls.getDeclaredField("Contact");
+			System.out.println(addressBook.getContact());
+			//read the value of a specified field
+			
+			
+			field.set(fields,field);
+			System.out.println(field.get(addressBook));
+			
+			//modify the value of a field of the object
+		} catch (NoSuchFieldException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			
+		} catch (SecurityException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
 
 	private static void inspectClass(Class<AddressBook> cls) {
 		

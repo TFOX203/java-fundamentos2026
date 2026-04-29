@@ -51,6 +51,10 @@ public class AddressBook {
 		
 		return false;
 	}
+	public char[] getContact() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 
