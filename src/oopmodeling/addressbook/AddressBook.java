@@ -18,6 +18,12 @@ public class AddressBook {
 	//This is container for the list of contact objects
 	protected FlexibleArray<Contact> contacts;
 	
+	public FlexibleArray<Contact> getContacts() {
+		return contacts;
+	}
+	public void setContacts(FlexibleArray<Contact> contacts) {
+		this.contacts = contacts;
+	}
 	public AddressBook() {
 		contacts = new FlexibleArray<Contact>();		
 	}
@@ -52,7 +58,7 @@ public class AddressBook {
 		return false;
 	}
 	public char[] getContact() {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 	

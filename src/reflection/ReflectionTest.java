@@ -5,7 +5,9 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
 
+import datastructure.FlexibleArray;
 import oopmodeling.addressbook.AddressBook;
+import oopmodeling.addressbook.Contact;
 
 public class ReflectionTest {
 
@@ -27,13 +29,15 @@ public class ReflectionTest {
 		Field[] fields = cls.getDeclaredFields();
 		
 		try {
-			Field field = cls.getDeclaredField("Contact");
-			System.out.println(addressBook.getContact());
+			Field field = cls.getDeclaredField("contacts");
+			System.out.println(addressBook.getContacts());
+			//change the access modifier from private to public
+			field.setAccessible(true);
 			//read the value of a specified field
-			
-			
-			field.set(fields,field);
+			field.set(addressBook,new FlexibleArray<Contact>());
 			System.out.println(field.get(addressBook));
+			System.out.println(field.get(addressBook));
+			System.out.println(addressBook.getContacts());
 			
 			//modify the value of a field of the object
 		} catch (NoSuchFieldException e) {
