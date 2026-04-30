@@ -2,6 +2,7 @@ package reflection;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
 
@@ -21,14 +22,36 @@ public class ReflectionTest {
 		
 		AddressBook addressBook = new AddressBook();
 		manipulateObject(addressBook);
+		
+		invokeMehodOfAnObject(addressBook);
 	}
 	
+
+	private static void invokeMehodOfAnObject(Object obj) {
+		Class<?> cls = obj.getClass();
+		try {
+			Method method = cls.getDeclaredMethod("getContacts",String.class);
+			method.invoke(obj, null);
+		} catch (NoSuchMethodException e) {
+			e.printStackTrace();
+		
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InvocationTargetException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
+	}
+
 
 	private static void manipulateObject(AddressBook addressBook) {
 		Class<?> cls = addressBook.getClass();
 		Field[] fields = cls.getDeclaredFields();
 		
 		try {
+			//potentially we may get an no such field exception
+			//if we pass a field name that does not exist
 			Field field = cls.getDeclaredField("contacts");
 			System.out.println(addressBook.getContacts());
 			//change the access modifier from private to public
